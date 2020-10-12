@@ -46,7 +46,7 @@ def save_user_attributes(user, attributes, **kwargs):
         profileInDb =Profile.objects.filter(no_induk = attributes['npm']).exists()
         if not profileInDb:
             profile = Profile(user = user, nama = attributes['nama'], faculty = record['faculty'], study_program = record['study_program'],
-            educational_program = record['educational_program'], email = f'{user.username}@ui.ac.id', no_induk = attributes['npm'])
+            educational_program = record['educational_program'], email = f'{user.username}@ui.ac.id', no_induk = attributes['npm'], role='mahasiswa')
             profile.save()
             user.profile = profile
             user.save()
@@ -54,7 +54,7 @@ def save_user_attributes(user, attributes, **kwargs):
     if attributes['peran_user'] == 'staff':
         profileInDb = Profile.objects.filter(no_induk = attributes['nip']).exists()
         if not profileInDb:
-            profile = Profile(user = user, nama = attributes['nama'], nip = attributes['nip'], email = f'{user.username}@ui.ac.id')
+            profile = Profile(user = user, nama = attributes['nama'], nip = attributes['nip'], email = f'{user.username}@ui.ac.id', role='staff')
             profile.save()
             user.profile = profile
             user.save()
