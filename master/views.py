@@ -24,3 +24,4 @@ def home(request):
 def landingPage(request):
     return render(request,"landingPage.html")
 
+
