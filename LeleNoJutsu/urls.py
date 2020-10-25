@@ -21,7 +21,8 @@ from master import views as masterViews
 
 
 urlpatterns = [
-    path('', masterViews.redirect, name='landing'),
+    path('', masterViews.landingPage, name="landingPage"),
+    path('red/', masterViews.redirect, name='redirect'),
     path('admin/', admin.site.urls),
     path('login/', cas_views.LoginView.as_view(), name='login'),
     path('logout/', cas_views.LogoutView.as_view(), name='logout'),
