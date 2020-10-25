@@ -51,7 +51,13 @@
   <body>
     <div class="card">
       <h1 style="font-size: 40px;">&lt; LeleNoJutsu /&gt; Meet!</h1>
+      {% if user.is_authenticated %}
+      <a href="/home" class="button">CREATE</a>
+      <a href="/home" class="button">JOIN</a>
+      <a href="/logout" class="button">LOGOUT</a>
+      {% else %}
       <a href="/red" class="button">SSO Login</a>
+      {% endif %}
     </div>
   </body>
 </html>
