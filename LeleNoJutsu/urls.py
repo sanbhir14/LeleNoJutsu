@@ -27,4 +27,5 @@ urlpatterns = [
     path('login/', cas_views.LoginView.as_view(), name='login'),
     path('logout/', cas_views.LogoutView.as_view(), name='logout'),
     path('home/', masterViews.home, name="home"),
+    path('input/', masterViews.input, name="input"),
 ]
